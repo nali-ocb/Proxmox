@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Copyright (c) 2021-2023 tteck
-# Author: tteck (tteckster)
+# Copyright (c) 2021-2023  NAli
+# Author: NAli
 # License: MIT
-# https://github.com/tteck/Proxmox/raw/main/LICENSE
+# https://github.com/nali-ocb/Proxmox/raw/main/LICENSE
 
 if [ "$VERBOSE" = "yes" ]; then set -x; STD=""; else STD="silent"; fi
 silent() { "$@" > /dev/null 2>&1; }
@@ -91,7 +91,7 @@ $STD apt-get install -y mc
 msg_ok "Installed Dependencies"
 
 echo "export TERM='xterm-256color'" >>/root/.bashrc
-echo -e "$APPLICATION LXC provided by https://tteck.github.io/Proxmox/\n" > /etc/motd
+echo -e "$APPLICATION LXC provided by https://nali-ocb.github.io/Proxmox/\n" > /etc/motd
 chmod -x /etc/update-motd.d/*
 if ! getent shadow root | grep -q "^root:[^\!*]"; then
   msg_info "Customizing Container"
